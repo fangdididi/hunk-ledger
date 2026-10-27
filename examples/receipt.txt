@@ -1,0 +1,13 @@
+HUNK LEDGER RECEIPT  verdict: HOLD
+diff ad72d9db248c7885  hunks 4  clean 2  finding 1  skipped 1  stop line: major and above
+
+Blocking:
+  F1 [major, confirmed] src/pay.py:11  zero-value orders (full coupons) now raise instead of completing
+
+Below the stop line (do not fix unless asked):
+  F2 [minor] src/pay.py:13  retries is reset inside charge(); the old module-level counter is now dead
+
+Refuted by the verifier: F3
+
+Not reviewed:
+  H4 binary image, checked dimensions only

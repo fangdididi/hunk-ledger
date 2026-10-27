@@ -1,0 +1,25 @@
+{
+  "hunks": {
+    "H1": {"status": "finding"},
+    "H2": {"status": "clean", "note": "comment marker text only, no logic"},
+    "H3": {"status": "clean", "note": "new README, checked the install command runs"},
+    "H4": {"status": "skipped", "note": "binary image, checked dimensions only"}
+  },
+  "findings": [
+    {"id": "F1", "hunk": "H1", "file": "src/pay.py", "line": 11, "side": "new",
+     "quote": "if total <= 0:", "severity": "major", "category": "bug",
+     "claim": "zero-value orders (full coupons) now raise instead of completing",
+     "by": "finder",
+     "verify": {"verdict": "confirmed", "reason": "checkout passes total 0 for 100% coupons; a two-line test raises ValueError", "by": "verifier"}},
+    {"id": "F2", "hunk": "H1", "file": "src/pay.py", "line": 13, "side": "new",
+     "quote": "retries = 0", "severity": "minor", "category": "maintainability",
+     "claim": "retries is reset inside charge(); the old module-level counter is now dead",
+     "by": "finder",
+     "verify": {"verdict": "confirmed", "reason": "no other reader of the module counter", "by": "verifier"}},
+    {"id": "F3", "hunk": "H1", "file": "src/pay.py", "line": 11, "side": "old",
+     "quote": "if total < 0:", "severity": "major", "category": "bug",
+     "claim": "negative totals are no longer rejected",
+     "by": "finder",
+     "verify": {"verdict": "refuted", "reason": "the new condition <= 0 still rejects negatives", "by": "verifier"}}
+  ]
+}

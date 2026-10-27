@@ -1,0 +1,27 @@
+diff --git a/src/pay.py b/src/pay.py
+index 1..2 100644
+--- a/src/pay.py
++++ b/src/pay.py
+@@ -10,6 +10,7 @@ def charge(order):
+     total = order.total
+-    if total < 0:
++    if total <= 0:
+         raise ValueError("bad total")
++    retries = 0
+     while retries < MAX:
+         retries += 1
+     return send(total)
+@@ -40,3 +41,3 @@ class Gateway:
+     def ping(self):
+--- old marker
++--- new marker
+     return True
+diff --git a/README.md b/README.md
+new file mode 100644
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,2 @@
++# Pay
++hello
+diff --git a/logo.png b/logo.png
+Binary files a/logo.png and b/logo.png differ

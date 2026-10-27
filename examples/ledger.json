@@ -1,0 +1,141 @@
+{
+ "source": "examples/change.diff",
+ "diff_hash": "ad72d9db248c7885",
+ "hunks": [
+  {
+   "file": "src/pay.py",
+   "binary": false,
+   "old_start": 10,
+   "new_start": 10,
+   "header": "def charge(order):",
+   "lines": [
+    [
+     " ",
+     10,
+     10,
+     "    total = order.total"
+    ],
+    [
+     "-",
+     11,
+     null,
+     "    if total < 0:"
+    ],
+    [
+     "+",
+     null,
+     11,
+     "    if total <= 0:"
+    ],
+    [
+     " ",
+     12,
+     12,
+     "        raise ValueError(\"bad total\")"
+    ],
+    [
+     "+",
+     null,
+     13,
+     "    retries = 0"
+    ],
+    [
+     " ",
+     13,
+     14,
+     "    while retries < MAX:"
+    ],
+    [
+     " ",
+     14,
+     15,
+     "        retries += 1"
+    ],
+    [
+     " ",
+     15,
+     16,
+     "    return send(total)"
+    ]
+   ],
+   "status_hint": "modified",
+   "id": "H1",
+   "added": 2,
+   "removed": 1
+  },
+  {
+   "file": "src/pay.py",
+   "binary": false,
+   "old_start": 40,
+   "new_start": 41,
+   "header": "class Gateway:",
+   "lines": [
+    [
+     " ",
+     40,
+     41,
+     "    def ping(self):"
+    ],
+    [
+     "-",
+     41,
+     null,
+     "-- old marker"
+    ],
+    [
+     "+",
+     null,
+     42,
+     "--- new marker"
+    ],
+    [
+     " ",
+     42,
+     43,
+     "    return True"
+    ]
+   ],
+   "status_hint": "modified",
+   "id": "H2",
+   "added": 1,
+   "removed": 1
+  },
+  {
+   "file": "README.md",
+   "binary": false,
+   "old_start": 0,
+   "new_start": 1,
+   "header": "",
+   "lines": [
+    [
+     "+",
+     null,
+     1,
+     "# Pay"
+    ],
+    [
+     "+",
+     null,
+     2,
+     "hello"
+    ]
+   ],
+   "status_hint": "new file",
+   "id": "H3",
+   "added": 2,
+   "removed": 0
+  },
+  {
+   "file": "logo.png",
+   "binary": true,
+   "old_start": 0,
+   "new_start": 0,
+   "header": "",
+   "lines": [],
+   "status_hint": "modified",
+   "id": "H4",
+   "added": 0,
+   "removed": 0
+  }
+ ]
+}
